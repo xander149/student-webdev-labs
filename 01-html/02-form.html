@@ -6,9 +6,85 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Exercise 02 - Form</title>
   </head>
-  <body>
+  <body>      
+    <!-- begin header -->
+    <header>
+    <h1>Roth IRA Calculator</h1>
+    </header>
+    <!-- end header -->
+    <!-- begin main body -->
     <main>
-      <!-- Add your code here -->
+      <!-- begin form -->
+      <form>
+        <!-- Balance input, in dollars -->
+         <p>
+          <label>Balance ($)
+            <input type="number", min="0", name="balance", required>
+          </label>
+        </p>
+        <!-- end Balance input -->
+
+        <!-- Annual Contribution input, in dollars -->
+         <p>
+          <label>Annual Contribution (4)
+            <input type="number", min="0", name="annualContribution">
+          </label>
+         </p>
+        <!-- end Annual Contribution input -->
+
+        <!-- Maximize Contributions input, radio buttons -->
+         <p>Maximize Contributions?
+            <input type="radio", id="yes", name="maximizeContributions", value="Yes">
+            <label for="yes">Yes</label><br>
+            <input type="radio", id="no", name="maximizeContributions",
+            value="No">
+            <label for="no">No</label><br>
+         </p>
+        <!-- end Maximize Contributions input -->
+
+        <!-- Expected Rate of Return input, in percentage -->
+         <p>
+          <label>Expected Rate of Return (5)
+            <input type="number", min="0", name="expectedReturnRate">
+          </label>
+         </p>
+        <!-- End Expected Rate of Return input -->
+
+        <!-- Current Age Input, integer -->
+         <p>
+          <label>Current Age
+            <input type="number", min="0", name="currentAge">
+          </label>
+         </p>
+        <!-- End Current Age Input -->
+
+        <!-- Retirement Age Input, integer -->
+         <p>
+          <label>Retirement Age
+            <input type="number", min="0", name="retirementAge">
+          </label>
+         </p>
+        <!-- End Retirement Age Input -->
+
+        <!-- Marginal Tax Rate input, in percentage -->
+         <p>
+          <label>Marginal Tax Rate (%)
+            <input type="number", min="0", name="marginalTaxRate">
+          </label>
+         </p>
+        <!-- End Marginal Tax Rate input -->
+
+        <!-- Calculate Button -->
+         <input type="submit", value="Calculate">
+        <!-- End Calculate Button -->
+
+        <!-- Reset Button -->
+         <input type="reset", value="Reset">
+        <!-- End Reset Button -->
+      </form>
+      <!-- end form -->
     </main>
+    <!-- end main body -->
+    <footer>This exercise is a simplified version of the ROTH calculator at calculator.net</footer>
   </body>
 </html>
