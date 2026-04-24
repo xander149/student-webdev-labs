@@ -7,12 +7,86 @@
     <title>CSS Exercise 02 - Form</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <main>
-      <!-- Start with the code from the HTML folder.
-      - Make sure to fix any issues in your HTML code.
-      - Delete all mentions of <br>s and style the line breaks with CSS. 
-      - Add classes to style the elements on the page. -->
+  <body class="calculator-page">
+    <!-- begin header -->
+    <header class="site-header">
+      <h1 class="site-title">Roth IRA Calculator</h1>
+    </header>
+    <!-- end header -->
+    <!-- begin main body -->
+    <main class="content">
+      <!-- begin form -->
+      <form class="calculator-form">
+        <!-- Balance input, in dollars -->
+        <p class="form-field">
+          <label>Balance ($)
+            <input type="number" min="0" name="balance" required>
+          </label>
+        </p>
+        <!-- end Balance input -->
+ 
+        <!-- Annual Contribution input, in dollars -->
+        <p class="form-field">
+          <label>Annual Contribution ($)
+            <input type="number" min="0" name="annualContribution">
+          </label>
+        </p>
+        <!-- end Annual Contribution input -->
+ 
+        <!-- Maximize Contributions input, radio buttons -->
+        <p class="form-field radio-group">Maximize Contributions?
+          <input type="radio" id="yes" name="maximizeContributions" value="Yes">
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="maximizeContributions" value="No">
+          <label for="no">No</label>
+        </p>
+        <!-- end Maximize Contributions input -->
+ 
+        <!-- Expected Rate of Return input, in percentage -->
+        <p class="form-field">
+          <label>Expected Rate of Return (%)
+            <input type="number" min="0" name="expectedReturnRate">
+          </label>
+        </p>
+        <!-- End Expected Rate of Return input -->
+ 
+        <!-- Current Age Input, integer -->
+        <p class="form-field">
+          <label>Current Age
+            <input type="number" min="0" max="120" step="1" name="currentAge">
+          </label>
+        </p>
+        <!-- End Current Age Input -->
+ 
+        <!-- Retirement Age Input, integer -->
+        <p class="form-field">
+          <label>Retirement Age
+            <input type="number" min="0" max="120" step="1" name="retirementAge">
+          </label>
+        </p>
+        <!-- End Retirement Age Input -->
+ 
+        <!-- Marginal Tax Rate input, in percentage -->
+        <p class="form-field">
+          <label>Marginal Tax Rate (%)
+            <input type="number" min="0" max="100" name="marginalTaxRate">
+          </label>
+        </p>
+        <!-- End Marginal Tax Rate input -->
+ 
+        <div class="form-actions">
+          <!-- Calculate Button -->
+          <input type="submit" class="btn btn-primary" value="Calculate">
+          <!-- End Calculate Button -->
+ 
+          <!-- Reset Button -->
+          <input type="reset" class="btn btn-secondary" value="Reset">
+          <!-- End Reset Button -->
+        </div>
+      </form>
+      <!-- end form -->
     </main>
+    <!-- end main body -->
+    <footer class="site-footer">This exercise is a simplified version of the ROTH calculator at calculator.net</footer>
   </body>
 </html>

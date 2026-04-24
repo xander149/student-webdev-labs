@@ -1,1 +1,291 @@
-/* Add your CSS code here  */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+ 
+.books-page {
+  --ice-blue-juvie: #8fbcd4;
+  --gothic-gray-blue: #6f8796;
+  --dark-slate-infinity: #1f2a33;
+ 
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f1ea;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+ 
+.books-page .site-title,
+.books-page .section-heading {
+  font-family: 'Cinzel', serif;
+  color: var(--dark-slate-infinity);
+  letter-spacing: 0.02em;
+}
+ 
+.books-page .site-title {
+  font-size: 2.25rem;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin: 0;
+  border-bottom: 2px solid var(--gothic-gray-blue);
+}
+ 
+.books-page .section-heading {
+  font-size: 1.6rem;
+  color: var(--gothic-gray-blue);
+  border-left: 4px solid var(--ice-blue-juvie);
+  padding-left: 0.75rem;
+  margin-top: 2rem;
+}
+ 
+/* Navbar */
+.books-page .main-nav {
+  background-color: var(--dark-slate-infinity);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+ 
+.books-page .nav-link {
+  font-family: 'Cinzel', serif;
+  color: #f5f1ea;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+ 
+/* Ice-blue hover effect for nav links */
+.books-page .nav-link:hover,
+.books-page .nav-link:focus {
+  color: var(--ice-blue-juvie);
+  background-color: rgba(143, 188, 212, 0.1);
+}
+ 
+/* Main content */
+.books-page .content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+ 
+.books-page .content-section {
+  margin-bottom: 2.5rem;
+}
+ 
+.books-page .book-list {
+  padding-left: 1.5rem;
+}
+ 
+.books-page .book-list li {
+  margin-bottom: 0.35rem;
+}
+ 
+/* Image hover effect — slight enlargement */
+.books-page .cover-image {
+  max-width: 220px;
+  height: auto;
+  margin: 0.5rem;
+  border: 2px solid var(--gothic-gray-blue);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+ 
+.books-page .cover-image:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(31, 42, 51, 0.3);
+}
+ 
+.books-page .cover-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+ 
+.books-page .cover-gallery .section-heading {
+  flex-basis: 100%;
+}
+ 
+/* Table */
+.books-page .pov-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+ 
+.books-page .pov-table th {
+  background-color: var(--dark-slate-infinity);
+  color: #f5f1ea;
+  font-family: 'Cinzel', serif;
+  padding: 0.6rem;
+  border: 1px solid var(--gothic-gray-blue);
+}
+ 
+.books-page .pov-table td {
+  padding: 0.55rem;
+  border: 1px solid var(--gothic-gray-blue);
+  text-align: center;
+}
+ 
+.books-page .pov-table tbody tr:nth-child(even) td {
+  background-color: rgba(143, 188, 212, 0.15);
+}
+ 
+.books-page .pov-table tfoot {
+  background-color: var(--ice-blue-juvie);
+  font-weight: bold;
+}
+ 
+/* ==========================================================================
+   PAGE 2: Roth IRA Calculator  (.calculator-page)
+   ========================================================================== */
+ 
+   .calculator-page {
+    --midnight-blue: #161678;
+    --midnight-blue-hover: #0f0f55;
+    --midnight-blue-tint: rgba(22, 22, 120, 0.08);
+   
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    background-color: #eef0f7;
+    color: #2a2a2a;
+    line-height: 1.5;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   
+  .calculator-page .site-header,
+  .calculator-page .content,
+  .calculator-page .site-footer {
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-left: 4px solid var(--midnight-blue);
+    border-right: 4px solid var(--midnight-blue);
+  }
+   
+  .calculator-page .site-header {
+    border-top: 4px solid var(--midnight-blue);
+    border-radius: 10px 10px 0 0;
+    background-color: var(--midnight-blue);
+    padding: 0;
+    box-shadow: 0 -4px 20px rgba(22, 22, 120, 0.08);
+  }
+   
+  .calculator-page .site-title {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #ffffff;
+    background-color: var(--midnight-blue);
+    padding: 1.5rem 1.75rem;
+    margin: 0;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+   
+  .calculator-page .content {
+    padding: 1.75rem;
+    border-top: 1px solid #eceef5;
+  }
+   
+  .calculator-page .site-footer {
+    border-bottom: 4px solid var(--midnight-blue);
+    border-radius: 0 0 10px 10px;
+    padding: 0.9rem 1.75rem;
+    margin-top: 0;
+    font-size: 0.8125rem;
+    color: #6b6b7a;
+    text-align: left;
+    background-color: #f7f8fc;
+    border-top: 1px solid #eceef5;
+    box-shadow: 0 4px 20px rgba(22, 22, 120, 0.08);
+  }
+   
+  .calculator-form .form-field {
+    margin: 0 0 1.1rem 0;
+  }
+   
+  .calculator-form label {
+    display: block;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.25rem;
+  }
+   
+  /* Number inputs */
+  .calculator-form input[type="number"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 0.65rem;
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    border: 1px solid #c4c4c4;
+    border-radius: 4px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+   
+  .calculator-form input[type="number"]:focus {
+    outline: none;
+    border-color: var(--midnight-blue);
+    box-shadow: 0 0 0 3px rgba(22, 22, 120, 0.15);
+  }
+   
+  /* Radio buttons */
+  .calculator-form .radio-group input[type="radio"] {
+    margin-left: 0.75rem;
+    margin-right: 0.25rem;
+    accent-color: var(--midnight-blue);
+  }
+   
+  .calculator-form .radio-group label {
+    display: inline;
+    font-weight: normal;
+    margin-right: 0.5rem;
+  }
+   
+  /* Button row */
+  .calculator-form .form-actions {
+    margin-top: 1rem;
+  }
+   
+  .calculator-form .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+   
+  .calculator-form .btn-primary {
+    background-color: var(--midnight-blue);
+    color: #ffffff;
+  }
+   
+  .calculator-form .btn-primary:hover {
+    background-color: #0f0f55;
+  }
+   
+  .calculator-form .btn-secondary {
+    background-color: #ffffff;
+    color: var(--midnight-blue);
+    border: 1px solid var(--midnight-blue);
+  }
+   
+  .calculator-form .btn-secondary:hover {
+    background-color: rgba(22, 22, 120, 0.08);
+  }
+   
+  .calculator-form .btn:active {
+    transform: translateY(1px);
+  } 
