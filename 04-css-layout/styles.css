@@ -8,6 +8,16 @@ body {
 }
 
 /* Exercise 01 - Center */
+
+/* First, I'm going to create a flexbox container element for the box 
+to be a child of. */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100pc;
+}
+
 .box {
   width: 200px;
   height: 100px;
@@ -15,7 +25,13 @@ body {
   background: var(--purple);
   color: var(--light-text-color);
   font-size: 1.75rem;
-  text-align: center;
+  text-align: center; 
+  margin: auto;
+
+  /* center the text: this requires treating the box itself as a 
+  flexbox container item */
+  display: flex;
+  align-items: center;
 }
 
 h1 {
