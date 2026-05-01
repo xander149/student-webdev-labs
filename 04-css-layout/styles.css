@@ -126,4 +126,106 @@ h1 {
 
 /* Exercise 03 - CSS Grid */
 
+.grid1-page .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 6fr 1fr 1fr;
+  gap: 10px;
+}
+
+.grid1-page .item1 {
+  grid-column: 1 / -1;
+}
+
+.grid1-page .item2 {
+  grid-column-end: span 2;
+}
+
+.grid1-page .item7 {
+  order: 1;
+}
+
+.grid1-page .item5 {
+  order: 2;
+}
+
+.grid1-page .item4 {
+  order: 3;
+}
+
+/* footer */
+.grid1-page .item8 {
+  grid-column: 1 / -1;
+  order: 4;
+}
+
+.grid1-page .item6 {
+  display: none;
+}
+
 /* Exercise 04 - CSS Grid Areas */
+.grid2-page .header {
+  grid-area: header;
+}
+
+.grid2-page .article {
+  grid-area: article;
+}
+
+.grid2-page .aside {
+  grid-area: aside;
+}
+
+.grid2-page .section {
+  grid-area: section;
+}
+
+.grid2-page .footer {
+  grid-area: footer;
+}
+
+.grid2-page .title {
+  display: none;
+}
+
+/* LARGE screens: Default */
+.grid2-page .grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 4fr 3fr 1fr;
+  grid-template-areas:
+    "header header header header header"
+    "aside article article article article"
+    "section section section section section"
+    "footer footer footer footer footer"
+}
+
+/* MEDIUM screens: Override when width under 800 pixels */
+@media all and (max-width: 800px) {
+  .grid2-page .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 3fr 2fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "article article aside"
+      "section section section"
+      "footer footer footer";
+  }
+}
+
+/* SMALL screens: Override when width under 500 pixels */
+@media all and (max-width: 500px) {
+  /* On the smallest screens, everything is in one column */
+  .grid2-page .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 5fr 1fr 1fr;
+    grid-template-areas:
+      "header"
+      "article"
+      "aside"
+      "section"
+      "footer";
+  }
+}
+
