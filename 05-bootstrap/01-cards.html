@@ -11,14 +11,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body class="bg-light">
-    <header class="top-of-page">
-      <h1 class="title">Simple Game Showcase</h1>    
-      <nav class="navigation">
-      <a href="#dino">Dino Game</a>
-      <a href="#goose">Untitled Goose Game</a>
-      <a href="#flappy">Flappy Bird</a>
+    <!-- For 05 Exercises, we will use the Boostrap Navbar to create a 
+     responsive navigation header that resizes to use a collapsing hamburger
+     menu in mobile views.-->
+
+    <!-- Up to small screen sizes, collapse the options. After SM break,
+        increase to inline items.-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Simple Game Showcase</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- menu options -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#dino">Dino Game</a>
+          <a class="nav-item nav-link" href="#goose">Untitled Goose Game</a>
+          <a class="nav-item nav-link" href="#flappy">Flappy Bird</a>
+        </div>
+      </div>
     </nav>
-    </header>
+
     <h1 class="text-center m-4">Simple Game Showcase</h1>
     <main class="main-area">
       <!-- For 05 Exercises, let's recreate the cards from the old assignment
@@ -28,7 +41,7 @@
         <!-- When we reach the threshold screen size, make each card take
           -- only a third of the grid width. Otherwise, take it all up. -->
         <div class="col-sm-4">
-          <div class="card">
+          <div class="card text-center" id="dino">
             <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Chromium_T-Rex-error-offline.svg/250px-Chromium_T-Rex-error-offline.svg.png"
             class="card-img-top" 
@@ -40,11 +53,18 @@
                 Chrome browser. Players control a small dinosaur that runs endlessly, jumping over obstacles like cacti and dodging flying 
                 enemies. It's simple, fun, and addictive.
               </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <button
+                type="button" 
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#dinoModal">
+                Learn More
+              </button>
             </div>
           </div>
-
-          <div class="card">
+        </div>
+        <div class="col-sm-4">
+          <div class="card text-center" id="goose">
             <img
             src="https://upload.wikimedia.org/wikipedia/en/b/b2/Untitled_Goose_Game_Cover_art.jpg"
             class="card-img-top"
@@ -55,11 +75,18 @@
                 House House. It is a puzzle-stealth game where players control 
                 a mischievous goose causing chaos in a quiet village.
               </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <button
+                type="button" 
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#gooseModal">
+                Learn More
+              </button>
             </div>
           </div>
-
-          <div class="card">
+        </div>
+        <div class="col-sm-4">
+          <div class="card text-center" id="flappy">
             <img
             src="https://upload.wikimedia.org/wikipedia/en/0/0a/Flappy_Bird_icon.png"
             class="card-img-top"
@@ -70,16 +97,85 @@
                 Nguyen. It is a mobile game where players tap the screen to 
                 keep a bird flying between pipes without hitting them.
               </p>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <button 
+                type="button" 
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#flappyModal">
+                Learn More
+              </button>
             </div>
           </div>
         </div>
+        </div>
       </div>
+
+
     </main>
 
-    <footer class="bottom-of-page">
-      <p>© 2026 Simple Game Showcase</p>
+    <footer class="text-center footer footer-dark bg-dark">
+      <a class="footer-text">© 2026 Simple Game Showcase</a>
     </footer>
 
+
+    <!-- Separately, define the modals that will pop up when clicked in the
+      card's "Learn More" options -->
+    
+    <!-- Dino Modal -->
+    <div class="modal fade" id="dinoModal" tabindex="-1" role="dialog" aria-labelledby="dinoModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="dinoModalLabel">
+              Chrome Dinosaur Game
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">         
+            Many people describe the game as simple but addictive. It has 
+            become an iconic offline pastime and is praised for turning a 
+            frustrating situation into something fun.
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- Goose Modal -->
+    <div class="modal fade" id="gooseModal" tabindex="-1" role="dialog" aria-labelledby="gooseModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="gooseModalLabel">
+              Untitled Goose Game
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">         
+            The game received widespread praise for its humor, unique 
+            concept, and charming design. Players especially enjoyed the 
+            freedom to annoy villagers in creative ways.
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <!-- Flappy Modal -->
+    <div class="modal fade" id="flappyModal" tabindex="-1" role="dialog" aria-labelledby="flappyModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="flappyModalLabel">
+              Flappy Bird
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">         
+            The game became extremely popular for its difficulty and 
+            simplicity. Many players found it frustrating yet addictive, 
+            leading to viral success before it was eventually removed.
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
