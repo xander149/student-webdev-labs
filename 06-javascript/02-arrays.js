@@ -22,6 +22,13 @@ const pokemons = [
 ];
 
 // Add your code here for: forEachPokemon
+const forEachPokemon = function logForEachPokemon() {
+  pokemons.forEach((element, index, array) => 
+    element.types.length > 1 ? 
+      console.log(`#${index} ${element.name} - ${element.types[0]} / ${element.types[1]}`) :
+      console.log(`#${index} ${element.name} - ${element.types[0]}`)
+  )
+}
 
 console.group('=========== forEachPokemon =========== ');
 console.log(forEachPokemon());
@@ -48,6 +55,19 @@ console.log(forEachPokemon());
 console.groupEnd();
 
 // Add your code here for: filterPokemons
+const filterPokemons = function logFilterPokemons(type) {
+  //use the array methods filter(), sort(), and map()
+  const typePokemons = pokemons.filter(pokemon => (pokemon.types[0].trim().toLowerCase() === type.trim().toLowerCase() || pokemon.types[1].trim().toLowerCase() === type.trim().toLowerCase()));
+
+  //map the typed pokemons to name only.
+  const pokemonNames = typePokemons.map(pokemon => pokemon.name);
+
+  //Sort the pokemon names alphabetically ascending. Sort does this by
+  //default, as far as I know.
+  pokemonNames.sort();
+
+  return typePokemons;
+}
 
 console.group('=========== filterPokemons =========== ');
 console.log(filterPokemons('Fire'));
@@ -59,6 +79,15 @@ console.log(filterPokemons('Poison'));
 console.groupEnd();
 
 // Add your code here for: searchPokemons
+const searchPokemons = function logSearchPokemons(term) {
+  //Here, I used some for the types because I don't want to check if types
+  //has 1 or 2 items, and it makes it easy to map its items to lower case
+  //as well. 
+  return pokemons.filter(pokemon => (
+    pokemon.name.trim().toLowerCase().includes(term.trim().toLowerCase()) ||
+    pokemon.types.some(type => type.toLowerCase().includes(term.trim().toLowerCase()))
+  ))
+}
 
 console.group('=========== searchPokemons =========== ');
 console.log(searchPokemons('Wartortle'));
@@ -77,6 +106,15 @@ console.log(searchPokemons('bug'));
 console.groupEnd();
 
 // Add your code here for: reducePokemons
+const reducePokemons = function logReducePokemons() {
+    return pokemons.type.reduce((accumulator, current) => {
+      //Here, the accumulator creates a dictionary whose keys are
+      //the types. Whenever we go to a new pokemons, if it's not already
+      //in the dict, set that value to 1, otherwise just increment!
+      accumulator[current] = (accumulator[current] || 0) + 1;
+      return accumulator;
+    }, {});
+}
 
 console.group('=========== reducePokemons =========== ');
 console.log(reducePokemons);

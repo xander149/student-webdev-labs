@@ -24,7 +24,50 @@ const pokemons = [
 const sortPokemons = function logSortedPokemons(sortType) {
   const sortedPokemons = [];
   // Add your code here
+  const [sortKey, sortDirection] = str.split(",", 2);
+  sortKey = sortKey.trim().toLower();
+  sortDirection = sortDirection.trim().toLower();
 
+  switch (sortKey)
+  {
+    case "alphabetically":
+      switch (sortDirection)
+      {
+        case "ascending":
+          //by default, strings are 
+          sortedPokemons = pokemons.toSorted((a,b), a.name.LocalCompare(b.name));
+          break;
+
+        case "descending":
+          sortedPokemons = pokemons.toSorted((a,b), b.name.LocalCompare(a.name));
+          break;
+
+        default:
+          console.error("Invalid sort direction: must use ascending or descending. Sort direction used: ", sortDirection)
+          throw new Error("Execution halted due to invalid sort direction")
+      }
+      break;
+
+    case "numerically":
+      switch (sortDirection) 
+      {
+        case "ascending":
+          sortedPokemons = pokemons.toSorted((a,b), a.id - b.id);
+          break;
+
+        case "descending":
+          sortedPokemons = pokemons.toSorted((a,b), b.id - a.id);
+          break;
+          
+        default:
+          console.error("Invalid sort direction: must use ascending or descending. Sort direction used: ", sortDirection)
+          throw new Error("Execution halted due to invalid sort direction")
+      }
+      break;
+    default:
+      console.error("Invalid sort key type: must use alphabetically or numerically. Sort key used: ", sortKey);
+      throw new Error("Execution halted due to invalid sort type")
+  }
   return sortedPokemons;
 };
 
