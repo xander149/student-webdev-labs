@@ -12,11 +12,12 @@ const server = http.createServer((req, res) => {
     file.serveFile('/welcome.html', 200, {}, req, res);
   }
   // form route
-  else if (req.method === 'GET' && req.url === '') {
+  else if (req.method === 'GET' && req.url === '/form') {
     // fill out this route
+    file.serveFile('/form.html', 200, {}, req, res);
   }
   // form submission
-  else if (req.method === 'POST' && req.url === '') {
+  else if (req.method === 'POST' && req.url === '/submit') {
     let body = '';
 
     req.on('data', (chunk) => {
@@ -25,7 +26,7 @@ const server = http.createServer((req, res) => {
 
     req.on('end', () => {
       const userdata = querystring.parse(body);
-      const { usernameInput: name, emailInput: email } = userdata;
+      const { name, email } = userdata;
 
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.write(`<p>Thank you for submitting your information: </p>`);
@@ -33,6 +34,11 @@ const server = http.createServer((req, res) => {
       res.write(`<p>Email: ${email}</p>`);
       res.end();
     });
+  }
+  else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.write(`req url: ${req.url}`)
+    res.end('404 Not Found');
   }
 });
 
