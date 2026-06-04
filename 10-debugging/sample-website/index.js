@@ -19,13 +19,21 @@ for (const closePopupButton of closePopupButtons) {
 }
 
 const createLoadingContainer = function () {
-  const loadingContainer = document.querySelector('.loading-container');
+  const loadingContainer = document.getElementById("cat-facts-loading-container")
   const loader = document.createElement('img');
   loader.src = '../../images/loader.gif';
   loader.alt = 'loader gif while the data loads';
   loader.width = 60;
   loader.height = 60;
-  loadingContainer.append(loader);
+  if (loadingContainer == null)
+  {
+    console.error("Could not find any loading containers")
+  }
+  else 
+  {
+    loadingContainer.append(loader);
+    loadingContainer.classList.remove('display-none');
+  }
 };
 
 const fetchCatFacts = async function () {
@@ -35,10 +43,16 @@ const fetchCatFacts = async function () {
   createLoadingContainer();
 
   try {
-    const response = await fetch('https://catfact.ninja/facts?limit=10');
-    const data = await response.json();
 
-    data.data.forEach((element) => {
+    //Instead of just getting the first 10 facts, get 10 random ones using the
+    //endpoint for a single fact.
+    const promises = Array.from({ length: 10 }, () => 
+      fetch('https://catfact.ninja/fact').then(res => res.json())
+    );
+  
+    const combinedData = await Promise.all(promises);
+
+    combinedData.forEach((element) => {
       const catFactItem = document.createElement('p');
       catFactItem.setAttribute('class', 'cat-fact-list-item');
       catFactItem.textContent = element.fact;
@@ -47,8 +61,9 @@ const fetchCatFacts = async function () {
   } catch (error) {
     console.error('Error fetching cat facts:', error);
   } finally {
-    const loading = document.querySelector('.loading-container');
+    const loading = document.getElementById('cat-facts-loading-container');
     loading.setAttribute('class', 'display-none');
+    loading.replaceChildren();
   }
 };
 

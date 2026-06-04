@@ -162,7 +162,7 @@
           <div class="popup-section">
             <div class="space-between-distributed-row-container">
               <h3>Origin</h3>
-              <button class="close-popup-button">
+              <button class="close-popup-button" aria-label="close popup window" title="close popup window">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -205,7 +205,7 @@
           <div class="popup-section">
             <div class="space-between-distributed-row-container">
               <h3>Acceptance</h3>
-              <button class="close-popup-button">
+              <button class="close-popup-button" aria-label="close popup window" title="close popup window">
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -367,7 +367,7 @@
 
     <div id="CatFacts" class="content-container">
       <h1>Cat Facts</h1>
-      <div class="loading-container"></div>
+      <div class="loading-container" id="cat-facts-loading-container"></div>
       <div id="cat-facts-list"></div>
       <a class="reload-cat-facts">Load New Cats Facts</a>
     </div>
@@ -488,14 +488,15 @@
           id="message"
           cols="30"
           rows="10"
-        ></textarea>
-      </form>
-      <div
+        ></textarea>      
+        <div
         class="form space-evenly-distributed-row-container form-buttons-container"
       >
-        <input class="form-button" type="submit" value="submit" />
-        <input class="form-button" type="reset" value="reset" />
+        <input class="form-button" type="submit" value="submit" aria-label="submit form"/>
+        <input class="form-button" type="reset" value="reset" aria-label="reset form"/>
       </div>
+      </form>
+
     </div>
 
     <footer class="footer">
